@@ -1,0 +1,22 @@
+spring:
+  jdbc:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    generate-unique-name: false
+    #    username: "postgres"
+    #    password: "qwerty"
+    url: "jdbc:h2:mem:testdb"
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    #      enable_lazy_load_no_trans: true
+    #      event:
+    #        merge:
+    #          entity_copy_observer: allow
+    proporties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format-sql: true
+    show-sql: true
