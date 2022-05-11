@@ -12,10 +12,6 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
-    #      enable_lazy_load_no_trans: true
-    #      event:
-    #        merge:
-    #          entity_copy_observer: allow
     proporties:
       dialect: org.hibernate.dialect.PostgreSQLDialect
       format-sql: true

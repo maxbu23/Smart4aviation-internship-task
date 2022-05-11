@@ -23,9 +23,10 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class FlightServiceTest {
+class  FlightServiceTest {
 
     @Mock private FlightRepository flightRepository;
     @Mock private CargoEntityRepository cargoEntityRepository;
@@ -60,13 +61,13 @@ class FlightServiceTest {
     @Test
     public void givenFlightNumberAndDepartureDate_whenGetFlightResponse_thenReturnFlightResponse(){
         //given
-        given(flightRepository
+        when(flightRepository
                 .getByFlightNumberAndDepartureDate(1055L,ZonedDateTime.parse("2015-07-31T06:39:51-02:00")))
-                .willReturn(Optional.of(flight));
+                .thenReturn(Optional.of(flight));
 
-        given(cargoEntityRepository
+        when(cargoEntityRepository
                 .getById(flight.getFlightId()))
-                .willReturn(cargoEntity);
+                .thenReturn(cargoEntity);
 
         FlightResponse expectedFlightResponse = new FlightResponse(829.2,732.55,1561.75);
 
@@ -80,12 +81,13 @@ class FlightServiceTest {
     @Test
     public void givenFlightNumberAndDepartureDateOfFlightThatIsNotPresentInDatabase_whenGetFlightResponse_thenReturnNoSuchElementException(){
         // given
-        given(flightRepository.getByFlightNumberAndDepartureDate(1000L,ZonedDateTime.parse("2015-07-31T06:39:51-02:00")))
-                .willReturn(Optional.empty());
+        when(flightRepository.getByFlightNumberAndDepartureDate(1000L,ZonedDateTime.parse("2015-07-31T06:39:51-02:00")))
+                .thenReturn(Optional.empty());
 
         // when/then
         assertThrows(NoSuchElementException.class,()->underTest.getFlightResponse(1000L,ZonedDateTime.parse("2015-07-31T06:39:51-02:00")));
 
     }
+
 
 }

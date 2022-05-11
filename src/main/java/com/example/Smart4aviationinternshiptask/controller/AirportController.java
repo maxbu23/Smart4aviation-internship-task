@@ -3,8 +3,6 @@ package com.example.Smart4aviationinternshiptask.controller;
 import com.example.Smart4aviationinternshiptask.model.airportInfo.AirportInfoRequest;
 import com.example.Smart4aviationinternshiptask.model.airportInfo.AirportInfoResponse;
 import com.example.Smart4aviationinternshiptask.service.AirportService;
-import com.example.Smart4aviationinternshiptask.service.CargoEntityService;
-import com.example.Smart4aviationinternshiptask.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +15,7 @@ public class AirportController {
 
     private final AirportService airportService;
 
+    @Autowired
     public AirportController(AirportService airportService) {
         this.airportService = airportService;
     }

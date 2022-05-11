@@ -1,6 +1,8 @@
 package com.example.Smart4aviationinternshiptask.repository;
 
 import com.example.Smart4aviationinternshiptask.model.flight.Flight;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
