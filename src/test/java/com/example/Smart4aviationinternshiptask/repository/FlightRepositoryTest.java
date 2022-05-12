@@ -1,27 +1,15 @@
 package com.example.Smart4aviationinternshiptask.repository;
 
-import com.example.Smart4aviationinternshiptask.model.cargo.Baggage;
-import com.example.Smart4aviationinternshiptask.model.cargo.Cargo;
-import com.example.Smart4aviationinternshiptask.model.cargo.CargoEntity;
 import com.example.Smart4aviationinternshiptask.model.flight.Flight;
-import com.example.Smart4aviationinternshiptask.repository.FlightRepository;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+import java.util.NoSuchElementException;
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @DataJpaTest

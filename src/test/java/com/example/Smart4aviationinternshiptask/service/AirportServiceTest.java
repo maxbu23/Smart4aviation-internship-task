@@ -7,18 +7,14 @@ import com.example.Smart4aviationinternshiptask.model.cargo.CargoEntity;
 import com.example.Smart4aviationinternshiptask.model.flight.Flight;
 import com.example.Smart4aviationinternshiptask.repository.CargoEntityRepository;
 import com.example.Smart4aviationinternshiptask.repository.FlightRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.ZonedDateTime;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +33,6 @@ public class AirportServiceTest {
     private AirportService underTest;
 
     private Flight firstFlight;
-    private Flight secondFlight;
     private CargoEntity firstCargoEntity;
 
     @BeforeEach
@@ -50,14 +45,6 @@ public class AirportServiceTest {
                 "XYZ",
                 ZonedDateTime.parse("2015-07-31T06:39:51-02:00")
 
-        );
-
-        secondFlight = new Flight(
-                2L,
-                5678L,
-                "KRK",
-                "ABC",
-                ZonedDateTime.parse("2015-07-31T06:39:51-02:00")
         );
 
         List<Baggage> baggage = List.of(

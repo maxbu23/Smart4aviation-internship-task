@@ -5,8 +5,6 @@ spring:
       enabled: true
   datasource:
     generate-unique-name: false
-    #    username: "postgres"
-    #    password: "qwerty"
     url: "jdbc:h2:mem:testdb"
   jpa:
     defer-datasource-initialization: true
