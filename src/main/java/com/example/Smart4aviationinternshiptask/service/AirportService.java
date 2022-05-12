@@ -1,6 +1,5 @@
 package com.example.Smart4aviationinternshiptask.service;
 
-import com.example.Smart4aviationinternshiptask.model.airportInfo.AirportInfoRequest;
 import com.example.Smart4aviationinternshiptask.model.airportInfo.AirportInfoResponse;
 import com.example.Smart4aviationinternshiptask.model.cargo.Baggage;
 import com.example.Smart4aviationinternshiptask.model.cargo.CargoEntity;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
